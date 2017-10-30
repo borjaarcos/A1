@@ -1,0 +1,45 @@
+index.php
+----------------------
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form action="<? $_SERVER['PHP_SELF']; ?>" method="post">
+      <p>Nom:<input type="text" name="num"></p>
+    </form>
+  </body>
+</html>
+
+<?php
+
+  $num=htmlspecialchars($_POST['num']);
+  $a= 0;
+  /*vigilamos que no sea 0 o 1 para que no pete*/
+  if($num == 0)
+  {
+    echo"No se puede dividir.";
+  }
+  if($num == 1)
+  {
+    echo"1";
+  }
+
+/*aqui ponemos el codigo donde encontraremos los divisores*/
+  if($num!=0 || $num!=1){
+    for($i= $num ; $i>0; $i--){
+      if(($num % $i) == 0){
+        $array[$a]= $i;
+        $a++;
+      }
+    }
+/*printamos los numeros conseguidos*/
+    for($i = 0; $i < $a; $i ++)
+    {
+      echo $array[$i];
+      echo "<br>";
+    }
+  }
+ ?>

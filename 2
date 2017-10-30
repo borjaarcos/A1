@@ -1,0 +1,18 @@
+index.php
+-----------
+<?php
+/*definimos los array*/
+  $primero=array(0 => "Borja", 1 => "Carla", 2 => "Jose"
+  );
+  $segundo=array("Aorja", "Narla", "Xose"
+  );
+/*con esta funcion ponemos los valores del segundo y el primero array en resultado*/
+  $resultado= array_merge($primero, $segundo);
+/*sort ordena alfabeticamente*/
+  sort($resultado);
+
+  foreach ($resultado as $clave => $valor) {
+      echo "\n Niño[" . $clave . "] = " . $valor . "\n";
+  }
+
+ ?>
